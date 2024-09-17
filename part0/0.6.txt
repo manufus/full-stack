@@ -1,0 +1,19 @@
+sequenceDiagram
+    participant user
+    participant browser
+    participant server
+
+    user->>browser: accesses the page
+    browser->>server: Use of GET HTTPS protocol to fetch only one HTML page
+    browser<<->>browser: Reads HTML and JavaScript in browser manages content 
+    server->>browser: main.css, spa.js and data.json
+    Note right of user: Website
+    user->>browser: fills the form and clicks save
+    browser->>server: send user input to the server
+    browser->>server: HTTP POST request to the server address with the new info filled
+    Note right of browser: request to the address containing new JSON data containing the note content & the date
+    server->>browser: Status 201
+    Note right of browser: NO URL Redirect - no further HTTP requests
+    Note right of browser: JavaScript fetched from the server to create and push the new note
+    Note right of browser: Data sent with HTTP POST with JSON format
+    browser->>user: Updates content in page

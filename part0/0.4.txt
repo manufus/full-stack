@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant user
+    participant browser
+    participant server
+
+    user->>browser: fill information and clicks save
+    browser->>server: send user input to the server
+    Note right of browser: Five HTTP requests
+    browser->>server: HTTP POST request to the server address with the new info filled
+    Note right of browser: URL Redirect
+    server->>browser: HTTP GET to the addres of the header's location - notes
+    browser->>user: Reloads Notes page
+    Note right of browser: Three more HTTP requests - the same as at the beggining
+    server->>browser: main.css, mains.js and data.json
+    Note right of user: New updated website with the note added
+    

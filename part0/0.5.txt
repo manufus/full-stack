@@ -1,0 +1,15 @@
+sequenceDiagram
+    participant user
+    participant browser
+    participant server
+
+    user->>browser: accesses the page
+    browser->>server: Use of GET HTTPS protocol to fetch only one HTML page
+    browser<<->>browser: Reads HTML and JavaScript in browser manages content 
+    Note right of browser: The HTML file contains this code in <head>
+    Note right of browser: <link ... href="/exampleapp/main.css" />
+    Note right of browser: <script ... src="/exampleapp/spa.js"></script>
+    server->>browser: main.css, spa.js and data.json
+    Note right of user: Website
+
+    

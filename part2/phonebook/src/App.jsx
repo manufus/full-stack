@@ -69,7 +69,7 @@ const App = () => {
         })
         .catch((error) => {
           setNewMessage({
-            text: `Something went wrong: ${error.message}`,
+            text: `Something went wrong: ${error.response.data.error}`,
             type: "error",
           });
         });

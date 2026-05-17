@@ -37,3 +37,7 @@ npm run dev
 Notes:
 - Some backend parts require an `.env` file (for example, MongoDB connection strings).
 - Part 5 contains separate `backend` and `frontend` folders; install and run each independently.
+
+## Security & Maintenance Disclaimer
+
+This repository is an archive of completed academic coursework. Dependency versions in the various `package.json` files are intentionally kept at their original states to preserve the working behavior demonstrated in the course. Automated security scans (for example, npm audit or Dependabot) may flag outdated packages with Critical or High findings, but this code is not deployed to a live, public-facing production environment, so these alerts do not represent an active security risk.
